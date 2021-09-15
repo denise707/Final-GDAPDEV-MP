@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 2749334242
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9f9c57046c9b78aac76fba799710a440
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6a4eb586dcf20500c039d12d9d3b0a85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Animation/Mutant Animation/Mutant Controller.controller
+Dependencies: []

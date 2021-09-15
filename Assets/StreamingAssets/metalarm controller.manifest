@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 3819930158
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8365e1a8422a02b2097ff2153e3902e2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6a4eb586dcf20500c039d12d9d3b0a85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Animation/Metal Arm Animation/MetalArm Controller.controller
+Dependencies: []
