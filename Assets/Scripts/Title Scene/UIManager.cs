@@ -163,6 +163,8 @@ public class UIManager : MonoBehaviour
 
         WebHandlerScript.Instance.CreateUser();
 
+        UserProfile.SetActive(false);
+
         window.SetActive(false);
     }
 
