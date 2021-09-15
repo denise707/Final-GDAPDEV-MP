@@ -170,7 +170,7 @@ public class WebHandlerScript : MonoBehaviour
             //Iterate for testing
             foreach (Dictionary<string, string> player in playerList)
             {
-                Debug.Log($"Got player: {player["user_name"]}");
+                //Debug.Log($"Got player: {player["user_name"]}");
             }
 
             userList = playerList;
