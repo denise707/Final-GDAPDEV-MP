@@ -191,15 +191,16 @@ public class WebHandlerScript : MonoBehaviour
     {
         Dictionary<string, string> PlayerParams = new Dictionary<string, string>();
 
-        PlayerParams.Add("group_num", "8");
-        PlayerParams.Add("user_name", PlayerSystem.player_name);
-        PlayerParams.Add("score", (PlayerSystem.score).ToString());
+        PlayerParams.Add("nickname", UIManager.create_nickname);
+        PlayerParams.Add("name", UIManager.create_name);
+        PlayerParams.Add("email", UIManager.create_email);
+        PlayerParams.Add("contact", UIManager.create_contact);
 
         string requestString = JsonConvert.SerializeObject(PlayerParams);
         //Turn JSON to binary
         byte[] requestData = new UTF8Encoding().GetBytes(requestString);
 
-        UnityWebRequest request = new UnityWebRequest(BaseURL + "scores", "POST");
+        UnityWebRequest request = new UnityWebRequest(BaseURL + "players", "POST");
         request.SetRequestHeader("Content-Type", "application/json");
         request.uploadHandler = new UploadHandlerRaw(requestData);
         request.downloadHandler = new DownloadHandlerBuffer();
@@ -229,14 +230,17 @@ public class WebHandlerScript : MonoBehaviour
         Dictionary<string, string> PlayerParameters =
             new Dictionary<string, string>();
 
-        //Update player name
-        PlayerParameters.Add("name", "Hello");
+        //Update player 
+        PlayerParameters.Add("nickname", UIManager.create_nickname);
+        PlayerParameters.Add("name", UIManager.create_name);
+        PlayerParameters.Add("email", UIManager.create_email);
+        PlayerParameters.Add("contact", UIManager.create_contact);
 
         string requestString = JsonConvert.SerializeObject(PlayerParameters);
 
         byte[] requestData = new UTF8Encoding().GetBytes(requestString);
 
-        UnityWebRequest request = new UnityWebRequest(BaseURL + "players/22", "PUT");
+        UnityWebRequest request = new UnityWebRequest(BaseURL + "players/" + UIManager.retrieved_id, "PUT");
 
         request.SetRequestHeader("Content-Type", "application/json");
 

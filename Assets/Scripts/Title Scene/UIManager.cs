@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     //Pop Up Windows
     public GameObject PlayerDetails;
     public GameObject NotFound;
+    public GameObject UserProfile;
 
     //Search
     public InputField iF_search_nickname;
@@ -25,10 +26,28 @@ public class UIManager : MonoBehaviour
     string search_email = "";
 
     //Retrieved
+    public static string retrieved_id = "";
     string retrieved_nickname = "";
     string retrieved_name = "";
     string retrieved_email = "";
     string retrieved_contact = "";
+
+    //To create
+    public InputField iF_create_nickname;
+    public InputField iF_create_name;
+    public InputField iF_create_email;
+    public InputField iF_create_contact;
+
+    public static string create_nickname = "";
+    public static string create_name = "";
+    public static string create_email = "";
+    public static string create_contact = "";
+
+    //Edit
+    public InputField iF_edit_nickname;
+    public InputField iF_edit_name;
+    public InputField iF_edit_email;
+    public InputField iF_edit_contact;
 
     // Start is called before the first frame update
     void Start()
@@ -84,7 +103,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator OpenLeaderboards(GameObject LeaderboardsMenu)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         LeaderboardsMenu.SetActive(true);
     }
 
@@ -92,6 +111,10 @@ public class UIManager : MonoBehaviour
 
     public void OpenUserProfile(GameObject window)
     {
+        iF_search_nickname.text = "";
+        iF_search_email.text = "";
+
+        WebHandlerScript.Instance.GetUsers();
         window.SetActive(true);
     }
 
@@ -106,6 +129,7 @@ public class UIManager : MonoBehaviour
         {
             if(user["nickname"] == search_nickname && user["email"] == search_email)
             {
+                retrieved_id = user["id"];
                 retrieved_nickname = user["nickname"];
                 retrieved_name = user["name"];
                 retrieved_email = user["email"];
@@ -128,5 +152,32 @@ public class UIManager : MonoBehaviour
         {
             NotFound.SetActive(true);
         }
+    }
+
+    public void onCreate(GameObject window)
+    {
+        create_nickname = iF_create_nickname.text;
+        create_name = iF_create_name.text;
+        create_email = iF_create_email.text;
+        create_contact = iF_create_contact.text;
+
+        WebHandlerScript.Instance.CreateUser();
+
+        window.SetActive(false);
+    }
+
+    public void onEdit(GameObject window)
+    {
+        create_nickname = iF_edit_nickname.text;
+        create_name = iF_edit_name.text;
+        create_email = iF_edit_email.text;
+        create_contact = iF_edit_contact.text;
+
+        WebHandlerScript.Instance.EditPlayer();
+
+        UserProfile.SetActive(false);
+        PlayerDetails.SetActive(false);
+
+        window.SetActive(false);
     }
 }
