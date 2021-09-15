@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject PlayerDetails;
     public GameObject NotFound;
     public GameObject UserProfile;
+    public GameObject LoadingPanel;
 
     //Search
     public InputField iF_search_nickname;
@@ -86,6 +87,8 @@ public class UIManager : MonoBehaviour
 
     public void onLeaderboards(GameObject LeaderboardsMenu)
     {
+        LoadingPanel.SetActive(true);
+
         if (!retrieved)
         {
             foreach (Dictionary<string, string> player in WebHandlerScript.Instance.leaderboardsList)
@@ -105,6 +108,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         LeaderboardsMenu.SetActive(true);
+        LoadingPanel.SetActive(false);
     }
 
     //----USER PROFILE
