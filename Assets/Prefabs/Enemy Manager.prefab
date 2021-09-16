@@ -941,7 +941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4702478620560401137, guid: a9186732ae0bc14458da545247d18532, type: 3}
       propertyPath: damage
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4702478620560401137, guid: a9186732ae0bc14458da545247d18532, type: 3}
       propertyPath: health
@@ -1099,7 +1099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942210623864034265, guid: b7c59389fca79024d94326fa9935f878, type: 3}
       propertyPath: health
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7942210623864034265, guid: b7c59389fca79024d94326fa9935f878, type: 3}
       propertyPath: player

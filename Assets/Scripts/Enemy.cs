@@ -150,7 +150,7 @@ public class Enemy : MonoBehaviour
         if (!damage_received)
         {
             PlayerSystem.score += 50;
-            PlayerSystem.credits += 20;
+            PlayerSystem.credits += 50;
             damage_received = true;
         }      
     }

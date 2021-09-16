@@ -58,6 +58,7 @@ public class GameSystem: MonoBehaviour
         adsManager.ShowBanner();
 
         Time.timeScale = 1;
+        SoundManagerScript.PlaySound("BGM_Default");
     }
 
     private void OnAdDone(object sender, AdFinishEventArgs e)
@@ -121,10 +122,14 @@ public class GameSystem: MonoBehaviour
                         {
                             case "Level 1":
                                 Time.timeScale = 1;
+                                PlayerSystem.health += 30;
+                                if (PlayerSystem.health >= 100) PlayerSystem.health = 100;
                                 SceneManager.LoadScene("Level 2");
                                 adsManager.ShowInterstitialAd();
                                 break;
                             case "Level 2":
+                                PlayerSystem.health += 30;
+                                if (PlayerSystem.health >= 100) PlayerSystem.health = 100;
                                 Time.timeScale = 1;
                                 SceneManager.LoadScene("Level 3");
                                 adsManager.ShowInterstitialAd();
