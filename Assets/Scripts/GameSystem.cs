@@ -56,6 +56,8 @@ public class GameSystem: MonoBehaviour
         adsManager.OnAdDone += OnAdDone;
 
         adsManager.ShowBanner();
+
+        Time.timeScale = 1;
     }
 
     private void OnAdDone(object sender, AdFinishEventArgs e)
@@ -118,10 +120,12 @@ public class GameSystem: MonoBehaviour
                         switch (SceneManager.GetActiveScene().name)
                         {
                             case "Level 1":
+                                Time.timeScale = 1;
                                 SceneManager.LoadScene("Level 2");
                                 adsManager.ShowInterstitialAd();
                                 break;
                             case "Level 2":
+                                Time.timeScale = 1;
                                 SceneManager.LoadScene("Level 3");
                                 adsManager.ShowInterstitialAd();
                                 break;

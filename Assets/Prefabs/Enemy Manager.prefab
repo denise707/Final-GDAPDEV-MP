@@ -759,6 +759,7 @@ MonoBehaviour:
   insectCopy: {fileID: 5936379577631967430}
   mutantCopy: {fileID: 2401695520773004507}
   fatCopy: {fileID: 0}
+  cobraCopy: {fileID: 0}
   enemyList: []
   enemyCopies: []
   flyingLoc:
@@ -771,6 +772,7 @@ MonoBehaviour:
   - {fileID: 5936379578061013904}
   - {fileID: 5936379578244087616}
   - {fileID: 5936379578513425594}
+  boss_num: 0
 --- !u!114 &5936379579018476609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,7 +941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4702478620560401137, guid: a9186732ae0bc14458da545247d18532, type: 3}
       propertyPath: damage
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4702478620560401137, guid: a9186732ae0bc14458da545247d18532, type: 3}
       propertyPath: health
@@ -994,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3804382572514223252, guid: df7bcad0f03e218428edb4c65dddda43, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3804382572514223252, guid: df7bcad0f03e218428edb4c65dddda43, type: 3}
       propertyPath: damage
@@ -1089,7 +1091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7942210623864034265, guid: b7c59389fca79024d94326fa9935f878, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7942210623864034265, guid: b7c59389fca79024d94326fa9935f878, type: 3}
       propertyPath: damage
@@ -1097,7 +1099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942210623864034265, guid: b7c59389fca79024d94326fa9935f878, type: 3}
       propertyPath: health
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7942210623864034265, guid: b7c59389fca79024d94326fa9935f878, type: 3}
       propertyPath: player
@@ -1190,6 +1192,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5936379579018476611}
     m_Modifications:
+    - target: {fileID: 4455651506369814629, guid: be3231ca3ab2be345ab913f9247ecd23, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455651506369814629, guid: be3231ca3ab2be345ab913f9247ecd23, type: 3}
+      propertyPath: health
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 4455651506369814630, guid: be3231ca3ab2be345ab913f9247ecd23, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1252,9 +1262,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5936379579018476611}
     m_Modifications:
+    - target: {fileID: 2651761981041701168, guid: f59af9a5cbb7ec84a93e1dde32850867, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2651761981041701168, guid: f59af9a5cbb7ec84a93e1dde32850867, type: 3}
+      propertyPath: health
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 2651761981041701170, guid: f59af9a5cbb7ec84a93e1dde32850867, type: 3}
       propertyPath: m_Name
       value: 'Cobra Copy  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2651761981041701170, guid: f59af9a5cbb7ec84a93e1dde32850867, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2651761981041701171, guid: f59af9a5cbb7ec84a93e1dde32850867, type: 3}
       propertyPath: m_RootOrder
@@ -1314,6 +1336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5936379579018476611}
     m_Modifications:
+    - target: {fileID: 3044613570389651128, guid: 6ddda14d2b89171499a25e5a30653528, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3044613570389651128, guid: 6ddda14d2b89171499a25e5a30653528, type: 3}
       propertyPath: damage
       value: 6
