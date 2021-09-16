@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
 
     //Target
     protected Transform player;
+    public GameObject HP;
+    Vector3 localScale;
 
     //Enemy Stats
     [SerializeField] private float speed = 0.05f;
@@ -15,6 +17,7 @@ public class Enemy : MonoBehaviour
     public float damage = 20.0f;
     Animator animator;
     public string type;
+    float maxHP;
 
     //Movement
     public bool move = false;
@@ -28,6 +31,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHP = health;
+        localScale = HP.transform.localScale;
         player = GameObject.FindGameObjectWithTag("PlayerBody").transform.GetChild(1).transform;
 
         if(this.type == "METAL ARM")
@@ -127,10 +132,16 @@ public class Enemy : MonoBehaviour
         health -= amount;
         animator.SetFloat("Health", health);
 
-        if(health <= 0f)
+        localScale.x = health / maxHP;
+        HP.transform.localScale = localScale;
+
+        if (health <= 0f)
         {
+            localScale.x = 0;
+            HP.transform.localScale = localScale;
             Die();
         }
+
     }
 
     void Die()
@@ -139,7 +150,7 @@ public class Enemy : MonoBehaviour
         if (!damage_received)
         {
             PlayerSystem.score += 50;
-            PlayerSystem.credits += 10;
+            PlayerSystem.credits += 50;
             damage_received = true;
         }      
     }

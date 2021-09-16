@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 4066330384
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e97b266b1d197f1984884a2577e2caac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Art/Backgrounds/Level 2/L2W2.png
+- Assets/Art/Backgrounds/Level 3/L3W3.png
+- Assets/Art/Backgrounds/Level 3/L3W1.png
+- Assets/Art/Backgrounds/Level 2/L2W1.png
+- Assets/Art/Backgrounds/Level 2/L2W3.png
+- Assets/Art/Backgrounds/Level 1/L1W2.png
+- Assets/Art/Backgrounds/Level 3/L3W2.png
+- Assets/Art/Backgrounds/Level 1/L1W3.png
+- Assets/Art/Backgrounds/Level 1/L1W1.png
+Dependencies: []

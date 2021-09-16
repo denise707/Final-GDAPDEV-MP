@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        retrieved = false;
         WebHandlerScript.Instance.GetPlayers();
         WebHandlerScript.Instance.GetUsers();
     }
@@ -60,7 +61,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void onStart()
@@ -68,7 +69,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Level 1");
     }
-   
+
     public void onExit()
     {
         Debug.Log("Exit Game");
@@ -87,26 +88,31 @@ public class UIManager : MonoBehaviour
 
     public void onLeaderboards(GameObject LeaderboardsMenu)
     {
-        LoadingPanel.SetActive(true);
+        //LoadingPanel.SetActive(true);
+        WebHandlerScript.Instance.GetPlayers();
 
         if (!retrieved)
         {
             foreach (Dictionary<string, string> player in WebHandlerScript.Instance.leaderboardsList)
             {
+               
                 GameObject newPlayer = GameObject.Instantiate(this.TextCopy, this.TextParent.transform); ;
                 newPlayer.GetComponent<Text>().text = ("    " + player["user_name"]).ToString() + " - " + (player["score"]).ToString();
+                Debug.Log(newPlayer.GetComponent<Text>().text);
             }
-
+           
             retrieved = true;
         }
 
+        LeaderboardsMenu.SetActive(true);
         TextCopy.SetActive(false);
-        StartCoroutine(OpenLeaderboards(LeaderboardsMenu));
+        //StartCoroutine(OpenLeaderboards(LeaderboardsMenu));
     }
 
     public IEnumerator OpenLeaderboards(GameObject LeaderboardsMenu)
     {
         yield return new WaitForSeconds(5f);
+        Debug.Log("HEre");
         LeaderboardsMenu.SetActive(true);
         LoadingPanel.SetActive(false);
     }

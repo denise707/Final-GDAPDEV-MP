@@ -21,7 +21,7 @@ public class Permanent : MonoBehaviour
 
             }
 
-            else if(gameObject.name == "AdsManager")
+            else if (gameObject.name == "AdsManager")
             {
 
             }
