@@ -49,6 +49,7 @@ public class GameSystem: MonoBehaviour
         enemy_increment = 1;
         wave_increment = 0; 
         game_result = 0;
+        dialogue_end = false;
 
         adsManager = GameObject.FindGameObjectWithTag("AdsManager").GetComponent<AdsManager>();
         GestureManager.Instance.OnSwipe += OnSwipe;
