@@ -45,7 +45,7 @@ public class GameSystem: MonoBehaviour
         next = false;
         going_next_level = false;
         swiped = false;
-        enemy_increment = 0;
+        enemy_increment = 5;
         wave_increment = 0; 
         game_result = 0;
 
@@ -78,8 +78,11 @@ public class GameSystem: MonoBehaviour
 
     private void OnSwipe(object sender, SwipeEventArgs e)
     {
-        UICallbackScript.instuctions = false;
-        swiped = true;
+        if(e.SwipeDirection == SwipeDirections.RIGHT)
+        {
+            UICallbackScript.instuctions = false;
+            swiped = true;
+        }
     }
 
     private void OnDisable()
@@ -152,8 +155,8 @@ public class GameSystem: MonoBehaviour
                             break;
                     }
 
-                    //Total of 3 waves each (> 1);                   
-                    if (wave_increment > -1)
+                    //Total of 3 waves each (> 1);       //Debug = -1             
+                    if (wave_increment > 1)
                     {
                         wave++;
                         wave_increment = 0;
@@ -178,7 +181,7 @@ public class GameSystem: MonoBehaviour
                         {
                             UICallbackScript.damaged = false;
                             going_next_level = false;
-                            enemy_increment += 0;
+                            enemy_increment += 5;
                             UICallbackScript.instuctions = false;
                             swiped = false;
                             dialogue_end = false;

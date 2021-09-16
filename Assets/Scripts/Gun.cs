@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
 
     private GunType selectedWeapon;
     float bonus_damage = 0.0f;
-    const float fire_rate = 0.5f;
+    const float fire_rate = 0.2f;
     float ticks = 0.0f;
     float speed = 300f;
 
@@ -29,7 +29,7 @@ public class Gun : MonoBehaviour
     //Reload Variables
     public static bool reload = false;
     float reload_ticks = 0.0f;
-    const float reload_time = 2.0f;
+    const float reload_time = 4.0f; 
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +48,8 @@ public class Gun : MonoBehaviour
     private void OnSpread(object sender, SpreadEventArgs e)
     {
         if (e.DistanceDelta <= 0)
-        {        
+        {
+            //panned = true;
             if (!already_panned)
             {
                 panned = false;
@@ -75,6 +76,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (WeaponSys.change_weapon)
         {
             ChangeGun();          
@@ -96,14 +98,10 @@ public class Gun : MonoBehaviour
 
         if (UICallback.shoot)
         {
-            if((WeaponSys.GetStats(selectedWeapon.weapon_name).current_magazine > 0 && ticks >= fire_rate && !panned) || Options.unli_ammo)
+            if((WeaponSys.GetStats(selectedWeapon.weapon_name).current_magazine > 0 && ticks >= fire_rate && !already_panned) || Options.unli_ammo)
             {
                 Shoot();
                 ticks = 0.0f;
-            }
-            else
-            {
-                UICallback.shoot = false;
             }
         }
 

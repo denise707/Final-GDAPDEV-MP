@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 4161790747
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 30b2930f2cd27897ce1f162508bee782
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6a4eb586dcf20500c039d12d9d3b0a85
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Animation/Wasp Animation/Wasp Controller.controller
+Dependencies: []

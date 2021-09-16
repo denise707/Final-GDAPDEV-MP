@@ -1,28 +1,28 @@
 ManifestFileVersion: 0
-CRC: 376728423
+CRC: 2182599334
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: background
+      Name: sounds
       Dependencies: {}
     Info_1:
-      Name: insect controller
+      Name: background
       Dependencies: {}
     Info_2:
       Name: mutant controller
       Dependencies: {}
     Info_3:
-      Name: metalarm controller
+      Name: fat controller
       Dependencies: {}
     Info_4:
       Name: wasp controller
       Dependencies: {}
     Info_5:
-      Name: fat controller
+      Name: metalarm controller
       Dependencies: {}
     Info_6:
       Name: cobra controller
       Dependencies: {}
     Info_7:
-      Name: sounds
+      Name: insect controller
       Dependencies: {}
