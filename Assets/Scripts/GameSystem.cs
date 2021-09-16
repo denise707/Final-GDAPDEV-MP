@@ -46,7 +46,7 @@ public class GameSystem: MonoBehaviour
         next = false;
         going_next_level = false;
         swiped = false;
-        enemy_increment = 1;
+        enemy_increment = 5;
         wave_increment = 0; 
         game_result = 0;
         dialogue_end = false;
@@ -187,7 +187,7 @@ public class GameSystem: MonoBehaviour
                         {
                             UICallbackScript.damaged = false;
                             going_next_level = false;
-                            enemy_increment += 0;
+                            enemy_increment += 5;
                             UICallbackScript.instuctions = false;
                             swiped = false;
                             dialogue_end = false;
