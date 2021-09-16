@@ -160,7 +160,7 @@ public class GameSystem: MonoBehaviour
                     }
 
                     //Total of 3 waves each (> 1);       //Debug = -1             
-                    if (wave_increment > -1)
+                    if (wave_increment > 1)
                     {
                         wave++;
                         wave_increment = 0;
