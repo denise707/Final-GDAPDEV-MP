@@ -172,6 +172,7 @@ public class UICallbackScript : MonoBehaviour
         SceneManager.LoadScene("Title Scene");
         WebHandlerScript.Instance.CreatePlayer();
         Debug.Log($"Player name: {PlayerSystem.player_name}");
+        adsManager.HideBanner();
     }
 
     public void onOK()
