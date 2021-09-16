@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     bool retrieved = false;
 
+    public NotifManager notifManager;
+
     //USER PROFILE VARIABLES
 
     //Pop Up Windows
@@ -56,6 +58,7 @@ public class UIManager : MonoBehaviour
         retrieved = false;
         WebHandlerScript.Instance.GetPlayers();
         WebHandlerScript.Instance.GetUsers();
+        notifManager.SendRepeatingNotif();
     }
 
     // Update is called once per frame
