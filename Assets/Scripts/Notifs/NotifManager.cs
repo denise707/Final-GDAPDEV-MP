@@ -52,7 +52,7 @@ public class NotifManager : MonoBehaviour
 
     public void SendSimpleNotif()
     {
-        string notif_Title = "Simple Notif";
+        string notif_Title = "Help!";
 
         string notif_Message = "The monsters are attacking! Prepare your weapons and survive.";
 
@@ -67,13 +67,13 @@ public class NotifManager : MonoBehaviour
 
     public void SendRepeatingNotif()
     {
-        string notif_Title = "Repeating Notif";
+        string notif_Title = "Help!";
 
         string notif_Message = "The monsters are attacking! Prepare your weapons and survive.";
 
         DateTime fireTime = DateTime.Now.AddSeconds(10); //10 seconds delay after pressed
 
-        TimeSpan interval = new TimeSpan(0, 5, 0);
+        TimeSpan interval = new TimeSpan(12, 0, 0);
 
         AndroidNotification notif = new AndroidNotification(notif_Title, notif_Message, fireTime, interval);
 

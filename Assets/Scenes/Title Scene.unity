@@ -1350,6 +1350,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &246706443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3220263997984926890, guid: 9906e94ab7695a540976df5dd1cd7be3, type: 3}
+  m_PrefabInstance: {fileID: 1288059787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a887f02640ae8c478c3bb808cfdc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &284908276
 GameObject:
   m_ObjectHideFlags: 0
@@ -7158,6 +7169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextCopy: {fileID: 1897495226}
   TextParent: {fileID: 1073638159}
+  notifManager: {fileID: 246706443}
   PlayerDetails: {fileID: 1025753228}
   NotFound: {fileID: 1924836029}
   UserProfile: {fileID: 936682102}
