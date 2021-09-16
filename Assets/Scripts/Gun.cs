@@ -115,15 +115,6 @@ public class Gun : MonoBehaviour
             UICallback.shoot = false;
         }
 
-        //if (panned && !already_panned)
-        //{
-        //    panned = false;
-        //    already_panned = true;
-        //    SoundManagerScript.PlaySound("ReloadAgain");
-        //    ReloadUI.SetActive(true);
-        //    Debug.Log("Pinch");
-        //}
-
         if (already_panned)
         {
             reload_ticks += Time.deltaTime;

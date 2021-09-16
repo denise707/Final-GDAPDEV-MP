@@ -32,6 +32,7 @@ public class Options : MonoBehaviour
 
     public void OnAimChange(Dropdown dd)
     {
+        SoundManagerScript.PlaySound("Button");
         if (dd.options[dd.value].text == "Crosshair") {
             aim_mode = true;
             Joystick.SetActive(true);
@@ -47,59 +48,72 @@ public class Options : MonoBehaviour
 
     public void OpenHelp(GameObject help)
     {
+        SoundManagerScript.PlaySound("Button");
         help.SetActive(true);
     }
     public void OpenDebug(GameObject debug)
     {
+        SoundManagerScript.PlaySound("Button");
         debug.SetActive(true);
     }
     public void CloseDebug(GameObject debug)
     {
+        SoundManagerScript.PlaySound("Button");
         debug.SetActive(false);
     }
 
     public void OnOpenLevelSelect()
     {
+        SoundManagerScript.PlaySound("Button");
         LevelSelection.SetActive(true);
     }
     public void OnCloseLevelSelect()
     {
+        SoundManagerScript.PlaySound("Button");
         LevelSelection.SetActive(false);
     }
 
     public void onOpenShowAds()
     {
+        SoundManagerScript.PlaySound("Button");
         ShowAds.SetActive(true);
     }
     public void OnCloseShowAds()
     {
+        SoundManagerScript.PlaySound("Button");
         ShowAds.SetActive(false);
     }
 
     public void BackMainMenu()
     {
+        SoundManagerScript.PlaySound("Button");
         GameUI.SetActive(true);
+        adsManager.HideBanner();
         SceneManager.LoadScene("Title Scene");
     }
 
     public void OnLoadLevelOne()
     {
+        SoundManagerScript.PlaySound("Button");
         Time.timeScale = 1;
         SceneManager.LoadScene("Level 1");
     }
 
     public void OnLoadLevelTwo()
     {
+        SoundManagerScript.PlaySound("Button");
         SceneManager.LoadScene("Level 2");
     }
 
     public void OnLoadLevelThree()
     {
+        SoundManagerScript.PlaySound("Button");
         SceneManager.LoadScene("Level 3");
     }
 
     public void OnMaxHealth(Toggle t)
     {
+        SoundManagerScript.PlaySound("Button");
         if (t.isOn)
         {
             PlayerSystem.health = 99999999;
@@ -112,6 +126,7 @@ public class Options : MonoBehaviour
 
     public void OnMaxCredits(Toggle t)
     {
+        SoundManagerScript.PlaySound("Button");
         if (t.isOn)
         {
             PlayerSystem.credits = 99999999;
@@ -124,6 +139,7 @@ public class Options : MonoBehaviour
 
     public void OnMaxAmmo(Toggle t)
     {
+        SoundManagerScript.PlaySound("Button");
         if (t.isOn)
         {
             unli_ammo = true;
@@ -136,16 +152,19 @@ public class Options : MonoBehaviour
 
     public void OnInterstitial()
     {
+        SoundManagerScript.PlaySound("Button");
         adsManager.ShowInterstitialAd();
     }
 
     public void OnBanner()
     {
+        SoundManagerScript.PlaySound("Button");
         adsManager.ShowBanner();
     }
 
     public void OnRewarded()
     {
+        SoundManagerScript.PlaySound("Button");
         adsManager.ShowRewawrdedAd();
     }
 }

@@ -19,6 +19,7 @@ public class UICallbackScript : MonoBehaviour
 
     //Initialize Windows/Pop-ups
     [SerializeField] GameObject GameResultPopUp;
+    [SerializeField] GameObject GameWinPopUp;
     [SerializeField] Text Message;
     [SerializeField] GameObject Instructions;
     [SerializeField] GameObject DamageIndicator;
@@ -37,6 +38,8 @@ public class UICallbackScript : MonoBehaviour
 
     public static bool newLevel = false;
     public static bool damaged = false;
+
+    public AdsManager adsManager;
 
     //Interval
     public static int hour = 0;
@@ -105,7 +108,7 @@ public class UICallbackScript : MonoBehaviour
         if (gameWin)
         {
             Message.text = "YOU SURVIVED";
-            GameResultPopUp.SetActive(true);
+            GameWinPopUp.SetActive(true);
         }
 
         if (damaged)
@@ -125,6 +128,7 @@ public class UICallbackScript : MonoBehaviour
     }
     public void onShopButton()
     {
+        adsManager.HideBanner();
         SoundManagerScript.PlaySound("Button");
         gameMenu.SetActive(false);
         shopMenu.SetActive(true);
@@ -132,6 +136,7 @@ public class UICallbackScript : MonoBehaviour
     }
     public void onReturn()
     {
+        adsManager.ShowBanner();
         SoundManagerScript.PlaySound("Button");
         gameMenu.SetActive(true);
         shopMenu.SetActive(false);
@@ -139,13 +144,18 @@ public class UICallbackScript : MonoBehaviour
     }
     public void openOptions(GameObject options)
     {
+        adsManager.ShowBanner();
+        SoundManagerScript.PlaySound("Button");
+        adsManager.HideBanner();
         options.SetActive(true);
         gameMenu.SetActive(false);
+        
         Time.timeScale = 0;
     }
 
     public void closeOptions(GameObject options)
     {
+        SoundManagerScript.PlaySound("Button");
         options.SetActive(false);
         gameMenu.SetActive(true);
         Time.timeScale = 1;
@@ -158,6 +168,7 @@ public class UICallbackScript : MonoBehaviour
 
     public void onConfirmName()
     {
+        SoundManagerScript.PlaySound("Button");
         SceneManager.LoadScene("Title Scene");
         WebHandlerScript.Instance.CreatePlayer();
         Debug.Log($"Player name: {PlayerSystem.player_name}");
@@ -165,6 +176,7 @@ public class UICallbackScript : MonoBehaviour
 
     public void onOK()
     {
+        SoundManagerScript.PlaySound("Button");
         AddPlayer.SetActive(true);
     }
 
