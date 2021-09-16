@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
 
     private GunType selectedWeapon;
     float bonus_damage = 0.0f;
-    const float fire_rate = 0.3f;
+    const float fire_rate = 0.5f;
     float ticks = 0.0f;
     float speed = 300f;
 
@@ -36,7 +36,11 @@ public class Gun : MonoBehaviour
     {
         JoyStick = FindObjectOfType<OnScreenJoystick>();
         UICallback = FindObjectOfType<UICallbackScript>();
-        WeaponSys = FindObjectOfType<WeaponSystem>();    
+        WeaponSys = FindObjectOfType<WeaponSystem>();
+        reload = false;
+
+        GestureManager.Instance.OnSpread += OnSpread;
+        GestureManager.Instance.OnDrag += OnDrag;
     }
 
     private void OnDrag(object sender, DragEventArgs e)
@@ -156,15 +160,15 @@ public class Gun : MonoBehaviour
                 switch (selectedWeapon.color)
                 {
                     case "BLUE":
-                        if (enemy.type == "WASP") { enemy.TakeDamage(this.selectedWeapon.damage_amount + bonus_damage); }
+                        if (enemy.type == "WASP" || enemy.type == "MUTANT") { enemy.TakeDamage(this.selectedWeapon.damage_amount + bonus_damage); }
                         else { enemy.TakeDamage(this.selectedWeapon.damage_amount); }
                         break;
                     case "GREEN":
-                        if (enemy.type == "METAL ARM") { enemy.TakeDamage(this.selectedWeapon.damage_amount + bonus_damage); }
+                        if (enemy.type == "METAL ARM" || enemy.type == "FAT") { enemy.TakeDamage(this.selectedWeapon.damage_amount + bonus_damage); }
                         else { enemy.TakeDamage(this.selectedWeapon.damage_amount); }
                         break;
                     case "RED":
-                        if (enemy.type == "INSECT") { enemy.TakeDamage(this.selectedWeapon.damage_amount + bonus_damage); }
+                        if (enemy.type == "INSECT" || enemy.type == "COBRA") { enemy.TakeDamage(this.selectedWeapon.damage_amount + bonus_damage); }
                         else { enemy.TakeDamage(this.selectedWeapon.damage_amount); }
                         break;
                 }

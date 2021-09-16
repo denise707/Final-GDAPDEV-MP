@@ -61,6 +61,8 @@ public class UICallbackScript : MonoBehaviour
         OptionsMenu.SetActive(false);
         DebugMenu.SetActive(false);
         LevelMenu.SetActive(false);
+
+        DamageIndicator.SetActive(false);
     }
 
     // Update is called once per frame

@@ -102,12 +102,14 @@ public class Options : MonoBehaviour
     public void OnLoadLevelTwo()
     {
         SoundManagerScript.PlaySound("Button");
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level 2");
     }
 
     public void OnLoadLevelThree()
     {
         SoundManagerScript.PlaySound("Button");
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level 3");
     }
 
