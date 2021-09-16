@@ -94,12 +94,12 @@ public class ShopSystem : MonoBehaviour
                 case "AWP":
                     AWPButton_Buy.interactable = false;
                     AWPButton_Upgrade.interactable = true;
-                    PlayerSystem.credits -= AWP_Price;
+                    //PlayerSystem.credits -= AWP_Price;
                     break;
                 case "Six":
                     SixButton_Buy.interactable = false;
                     SixButton_Upgrade.interactable = true;
-                    PlayerSystem.credits -= Six_Price;
+                    //PlayerSystem.credits -= Six_Price;
                     break;
             }
 
@@ -116,7 +116,10 @@ public class ShopSystem : MonoBehaviour
             Debug.Log(PlayerSystem.credits);
             int current_credits = PlayerSystem.credits - AWP_Price;
             message.text = "Are you sure you want to buy AWP for " + AWP_Price + " Credits?";
-            item_name = "AWP";                      
+            item_name = "AWP";
+            ConfirmButton.gameObject.SetActive(true);
+            CancelButton.gameObject.SetActive(true);
+            ReturnButton.gameObject.SetActive(false);
         }
 
         else
@@ -139,6 +142,9 @@ public class ShopSystem : MonoBehaviour
             int current_credits = PlayerSystem.credits - Six_Price;
             message.text = "Are you sure you want to buy Six for " + Six_Price + " Credits?";
             item_name = "Six";
+            ConfirmButton.gameObject.SetActive(true);
+            CancelButton.gameObject.SetActive(true);
+            ReturnButton.gameObject.SetActive(false);
         }
 
         else

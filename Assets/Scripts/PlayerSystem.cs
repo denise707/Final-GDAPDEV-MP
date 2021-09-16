@@ -53,6 +53,6 @@ public class PlayerSystem : MonoBehaviour
 
     private void Start()
     {
-        SoundManagerScript.PlaySound("BGM_Default");
+        
     }
 }
