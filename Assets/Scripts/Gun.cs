@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
 
     private GunType selectedWeapon;
     float bonus_damage = 0.0f;
-    const float fire_rate = 0.2f;
+    const float fire_rate = 0.3f;
     float ticks = 0.0f;
     float speed = 300f;
 
@@ -102,17 +102,18 @@ public class Gun : MonoBehaviour
             {
                 Shoot();
                 ticks = 0.0f;
+                Debug.Log("Shoot");
+            }
+
+            else
+            {
+                UICallback.shoot = false;
             }
         }
-
-        //if (panned && !already_panned)
-        //{
-        //    panned = false;
-        //    already_panned = true;
-        //    SoundManagerScript.PlaySound("ReloadAgain");
-        //    ReloadUI.SetActive(true);
-        //    Debug.Log("Pinch");
-        //}
+        else
+        {
+            UICallback.shoot = false;
+        }
 
         if (already_panned)
         {

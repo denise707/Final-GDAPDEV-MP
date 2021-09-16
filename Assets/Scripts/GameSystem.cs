@@ -16,6 +16,7 @@ public class GameSystem: MonoBehaviour
 
     //Swipe Gesture
     bool swiped = false;
+    bool check_swipe = false;
 
     public static int enemy_increment = 1;
     int wave_increment = 0;
@@ -45,7 +46,7 @@ public class GameSystem: MonoBehaviour
         next = false;
         going_next_level = false;
         swiped = false;
-        enemy_increment = 5;
+        enemy_increment = 1;
         wave_increment = 0; 
         game_result = 0;
 
@@ -78,10 +79,11 @@ public class GameSystem: MonoBehaviour
 
     private void OnSwipe(object sender, SwipeEventArgs e)
     {
-        if(e.SwipeDirection == SwipeDirections.RIGHT)
+        if(e.SwipeDirection == SwipeDirections.RIGHT && check_swipe)
         {
             UICallbackScript.instuctions = false;
             swiped = true;
+            check_swipe = false;
         }
     }
 
@@ -123,7 +125,8 @@ public class GameSystem: MonoBehaviour
                                 adsManager.ShowInterstitialAd();
                                 break;
                             case "Level 3":
-                                SceneManager.LoadScene("Title Scene");
+                                game_result = 1;
+                                //SceneManager.LoadScene("Title Scene");
                                 break;
                         }
                     }  
@@ -156,7 +159,7 @@ public class GameSystem: MonoBehaviour
                     }
 
                     //Total of 3 waves each (> 1);       //Debug = -1             
-                    if (wave_increment > 1)
+                    if (wave_increment > -1)
                     {
                         wave++;
                         wave_increment = 0;
@@ -177,11 +180,13 @@ public class GameSystem: MonoBehaviour
                     else
                     {
                         UICallbackScript.instuctions = true;
+                        check_swipe = true;
+
                         if (swiped)
                         {
                             UICallbackScript.damaged = false;
                             going_next_level = false;
-                            enemy_increment += 5;
+                            enemy_increment += 0;
                             UICallbackScript.instuctions = false;
                             swiped = false;
                             dialogue_end = false;

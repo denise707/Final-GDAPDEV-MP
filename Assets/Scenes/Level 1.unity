@@ -724,6 +724,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4287245746566592602, guid: a7b6cb181d258fc46b5865d19bc42901, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 4287245746731807058}
     - target: {fileID: 4287245746642313599, guid: a7b6cb181d258fc46b5865d19bc42901, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1026,6 +1030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b6cb181d258fc46b5865d19bc42901, type: 3}
+--- !u!1 &4287245746731807058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3097329909137954071, guid: a7b6cb181d258fc46b5865d19bc42901, type: 3}
+  m_PrefabInstance: {fileID: 4287245746731807057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9028067228059290763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1076,6 +1085,10 @@ PrefabInstance:
     - target: {fileID: 9028067229223706200, guid: 43d6436996bd7ce43baa624c45c7421f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028067229223706201, guid: 43d6436996bd7ce43baa624c45c7421f, type: 3}
+      propertyPath: m_Volume
+      value: 0.569
       objectReference: {fileID: 0}
     - target: {fileID: 9028067229223706203, guid: 43d6436996bd7ce43baa624c45c7421f, type: 3}
       propertyPath: m_Name

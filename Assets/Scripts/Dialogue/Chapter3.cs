@@ -42,6 +42,7 @@ public class Chapter3 : MonoBehaviour
 
     public void onNext()
     {
+        SoundManagerScript.PlaySound("Button");
         switch (GameSystem.wave - 1)
         {
             case 1:

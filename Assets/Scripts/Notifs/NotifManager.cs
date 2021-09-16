@@ -73,7 +73,7 @@ public class NotifManager : MonoBehaviour
 
         DateTime fireTime = DateTime.Now.AddSeconds(10); //10 seconds delay after pressed
 
-        TimeSpan interval = new TimeSpan(12, 0, 0);
+        TimeSpan interval = new TimeSpan(0, 5, 0);
 
         AndroidNotification notif = new AndroidNotification(notif_Title, notif_Message, fireTime, interval);
 
