@@ -211,6 +211,7 @@ public class WeaponSystem : MonoBehaviour
             AWP.available = true;
             Weapon_Holder_2.GetComponent<Image>().color = normal;
             Weapon_Holder_2.GetComponent<Button>().interactable = true;
+            Weapon_Holder_2.GetComponent<Button>().transform.GetChild(0).gameObject.SetActive(true);
             PlayerSystem.AWP.available = true;
         }
 
@@ -219,6 +220,7 @@ public class WeaponSystem : MonoBehaviour
             Six.available = true;
             Weapon_Holder_3.GetComponent<Image>().color = normal;
             Weapon_Holder_3.GetComponent<Button>().interactable = true;
+            Weapon_Holder_3.GetComponent<Button>().transform.GetChild(0).gameObject.SetActive(true);
             PlayerSystem.Six.available = true;
         }
     }
