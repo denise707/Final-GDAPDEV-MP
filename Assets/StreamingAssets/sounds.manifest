@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4272491443
+CRC: 2488567948
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 79c1e5cd88a56f4ebc5f79145ec9f1e4
+    Hash: db5d43343695cf2a2d69a562cf11bd1f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9a2ca7bdbd1871f7131daf57de908e0c
@@ -17,6 +17,8 @@ Assets:
 - Assets/Resources/BGM_Default.mp3
 - Assets/Resources/ReloadAgain.mp3
 - Assets/Resources/Reload.mp3
+- Assets/Resources/AWPShoot.mp3
 - Assets/Resources/Button.mp3
 - Assets/Resources/Shoot.mp3
+- Assets/Resources/SixSDShoot.mp3
 Dependencies: []

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
     [SerializeField] GameObject ReloadUI;
+    [SerializeField] GameObject muzzleflash;
  
     protected OnScreenJoystick JoyStick;
     protected UICallbackScript UICallback;
@@ -29,7 +30,9 @@ public class Gun : MonoBehaviour
     //Reload Variables
     public static bool reload = false;
     float reload_ticks = 0.0f;
-    const float reload_time = 4.0f; 
+    const float reload_time = 4.0f;
+
+    float muzzle_ticks = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -83,7 +86,7 @@ public class Gun : MonoBehaviour
 
         if (WeaponSys.change_weapon)
         {
-            ChangeGun();          
+            ChangeGun();
         }
 
         MoveCrosshair();
@@ -102,7 +105,7 @@ public class Gun : MonoBehaviour
 
         if (UICallback.shoot)
         {
-            if((WeaponSys.GetStats(selectedWeapon.weapon_name).current_magazine > 0 && ticks >= fire_rate && !already_panned) || Options.unli_ammo)
+            if ((WeaponSys.GetStats(selectedWeapon.weapon_name).current_magazine > 0 && ticks >= fire_rate && !already_panned) || Options.unli_ammo)
             {
                 Shoot();
                 ticks = 0.0f;
@@ -123,7 +126,7 @@ public class Gun : MonoBehaviour
         {
             reload_ticks += Time.deltaTime;
         }
-    
+
         if (already_panned && reload_ticks >= reload_time)
         {
             SoundManagerScript.PlaySound("Reload");
@@ -131,6 +134,20 @@ public class Gun : MonoBehaviour
             already_panned = false;
             reload_ticks = 0.0f;
             ReloadUI.SetActive(false);
+        }
+
+        if (WeaponSys.on_shoot == true && muzzleflash.activeSelf == false)
+        {
+            muzzleflash.SetActive(true);
+        }
+        else if (muzzleflash.activeSelf == true && muzzle_ticks >= 0.15f) { 
+            muzzleflash.SetActive(false);
+        muzzle_ticks = 0.0f;
+        }
+
+        if (muzzleflash.activeSelf == true)
+        {
+            muzzle_ticks += Time.deltaTime;
         }
     }
 
@@ -146,7 +163,12 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        SoundManagerScript.PlaySound("Shoot");
+        switch (selectedWeapon.color)
+        {
+            case "BLUE": SoundManagerScript.PlaySound("Shoot"); break;
+            case "GREEN": SoundManagerScript.PlaySound("AWPShoot"); break;
+            case "RED": SoundManagerScript.PlaySound("SixSDShoot"); break;
+        }
         Ray ray = Camera.main.ScreenPointToRay(this.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))

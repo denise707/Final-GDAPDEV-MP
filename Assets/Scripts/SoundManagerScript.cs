@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip default_bgm, shoot_sfx, monster_sfx, button_sfx, reload_sfx, next_reload_sfx;
+    public static AudioClip default_bgm, shoot_sfx, monster_sfx, button_sfx, reload_sfx, next_reload_sfx, awpshoot_sfx, sixsdshoot_sfx;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -31,6 +31,12 @@ public class SoundManagerScript : MonoBehaviour
         shoot_sfx = AssetBundleManager.Instance.GetAsset<AudioClip>("sounds", "Shoot");
         shoot_sfx.LoadAudioData();
 
+        awpshoot_sfx = AssetBundleManager.Instance.GetAsset<AudioClip>("sounds", "AWPShoot");
+        awpshoot_sfx.LoadAudioData();
+
+        sixsdshoot_sfx = AssetBundleManager.Instance.GetAsset<AudioClip>("sounds", "SixSDShoot");
+        sixsdshoot_sfx.LoadAudioData();
+
         button_sfx = AssetBundleManager.Instance.GetAsset<AudioClip>("sounds", "Button");
         button_sfx.LoadAudioData();
 
@@ -39,6 +45,7 @@ public class SoundManagerScript : MonoBehaviour
 
         next_reload_sfx = AssetBundleManager.Instance.GetAsset<AudioClip>("sounds", "ReloadAgain");
         next_reload_sfx.LoadAudioData();
+
     }
 
     // Update is called once per frame
@@ -73,6 +80,12 @@ public class SoundManagerScript : MonoBehaviour
                     break;
                 case "ReloadAgain":
                     audioSrc.PlayOneShot(next_reload_sfx);
+                    break;
+                case "AWPShoot":
+                    audioSrc.PlayOneShot(awpshoot_sfx);
+                    break;
+                case "SixSDShoot":
+                    audioSrc.PlayOneShot(sixsdshoot_sfx);
                     break;
             }
         }       
