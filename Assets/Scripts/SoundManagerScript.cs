@@ -54,7 +54,10 @@ public class SoundManagerScript : MonoBehaviour
             switch (clip)
             {
                 case "BGM_Default":
-                    audioSrc.PlayOneShot(default_bgm);
+                    audioSrc.clip = default_bgm;
+                    //audioSrc.PlayOneShot(default_bgm);
+                    audioSrc.loop = true;
+                    audioSrc.Play();
                     break;
                 case "Monster":
                     audioSrc.PlayOneShot(monster_sfx);

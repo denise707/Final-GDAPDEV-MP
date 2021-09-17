@@ -58,7 +58,7 @@ public class GameSystem: MonoBehaviour
         adsManager.ShowBanner();
 
         Time.timeScale = 1;
-        SoundManagerScript.PlaySound("BGM_Default");
+        //SoundManagerScript.PlaySound("BGM_Default");
     }
 
     private void OnAdDone(object sender, AdFinishEventArgs e)

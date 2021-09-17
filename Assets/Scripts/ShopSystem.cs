@@ -77,31 +77,37 @@ public class ShopSystem : MonoBehaviour
         {
             if (PlayerSystem.FAMAS.available)
             {
-                item_name = "FAMAS";               
+                item_name = "FAMAS";
             }
             if (PlayerSystem.AWP.available)
             {
                 item_name = "AWP";
+                weaponsys.Buy(item_name);
+                AWPButton_Buy.interactable = false;
+                AWPButton_Upgrade.interactable = true;
             }
             if (PlayerSystem.Six.available)
             {
                 item_name = "Six";
+                weaponsys.Buy(item_name);
+                SixButton_Buy.interactable = false;
+                SixButton_Upgrade.interactable = true;
             }
 
-            weaponsys.Buy(item_name);
-            switch (item_name)
-            {
-                case "AWP":
-                    AWPButton_Buy.interactable = false;
-                    AWPButton_Upgrade.interactable = true;
-                    //PlayerSystem.credits -= AWP_Price;
-                    break;
-                case "Six":
-                    SixButton_Buy.interactable = false;
-                    SixButton_Upgrade.interactable = true;
-                    //PlayerSystem.credits -= Six_Price;
-                    break;
-            }
+            //weaponsys.Buy(item_name);
+            //switch (item_name)
+            //{
+            //    case "AWP":
+            //        AWPButton_Buy.interactable = false;
+            //        AWPButton_Upgrade.interactable = true;
+            //        //PlayerSystem.credits -= AWP_Price;
+            //        break;
+            //    case "Six":
+            //        SixButton_Buy.interactable = false;
+            //        SixButton_Upgrade.interactable = true;
+            //        //PlayerSystem.credits -= Six_Price;
+            //        break;
+            //}
 
             start = false;
         }        
